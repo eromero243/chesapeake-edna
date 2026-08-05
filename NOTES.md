@@ -50,3 +50,26 @@ you can also use 'cd..' or 'cd../..' to jump back up.
 - Create a spreadsheet of candidate studies
 - Select 12-20 sample accesion numbers (comparing historical vs recent years)
 - Download metadata CSV file to 'metadata/' folder
+
+## 2026-08-04
+### What I Worked On: 
+- Downloaded 10 SRA run accession files for Chesapeake Bay eDNA fouling species analysis 
+- Organized sequence files using Unix commands ('mv', 'rm -r')
+- Compressed raw seauence files into 'fastq.gz' format using 'gzip data/raw/*.fastq' to save disk storage
+- Updated '.gitignore' using 'echo "data/raw/" >> .gitignore' to exclude large sequencing files from Git tracking 
+
+### Commands Learned / Used: 
+- 'cat': Used to quickly view text file contents in the terminal
+- 'echo' + '>>': Used to append text lines into files without opening an editor
+- '*': Wildcard / matches anything
+- 'mv': move folders in dr
+- rm -r: remove folders or files rm only removes files -r to use on folders
+- 'fasterq-dump': used to download fastq files from SRA
+
+### # Challenges and Fixes:
+- When using 'fasterq-dump', new data and raw folders where created despite having them creating this dir 
+'data/raw/data/raw' this was because i was already on 'data/raw' and had to cd back 'home', i fixed the mistake 
+using 'mv' and 'rm -r'
+
+### Next Action: 
+- Quality Control, assess the quality of my raw sequencing reads.
