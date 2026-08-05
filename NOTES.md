@@ -24,6 +24,10 @@ you can also use 'cd..' or 'cd../..' to jump back up.
 - Select 12-20 sample accesion numbers (comparing historical vs recent years)
 - Download metadata CSV file to 'metadata/' folder
 
+## 2026-07-26
+### What I Worked On:
+- Searching and selecting raw metabarcoding eDNA data from NCBI SRA
+- Found backup data I can use if I change directions in my project Accession: PRJNA1330277
 # Project Lab Notebook & Troubleshooting Log
 
 ## 2026-07-23
