@@ -73,3 +73,21 @@ using 'mv' and 'rm -r'
 
 ### Next Action: 
 - Quality Control, assess the quality of my raw sequencing reads.
+
+## 2026-08-13
+
+### What I Worked On:
+- Installed FastQC and MultiQC tools on the Ubuntu environment ('apt' / 'pip')
+- Generated individual quality metrics across all 18 '.fastq.gz' raw files using FastQC
+- Aggregated all 18 reports into a single HTML report ('data/qc/multiqc_report.html') using MultiQC
+- Analyzed sequence quality, duplication rates, read counts, and GC content across dataset
+- Ignored 'data/qc/' in '.gitignore' for storage
+
+### Results & Diagnostics
+- Base Quality Score: All 18 files passed with average Phred scores >30 (high accuracy, green zone)
+- Dupltication (82-94%): High duplication is expected due to target PCR amplification in eDNA marker gene sequencing
+- Read Integrity: Confirmed non-empty FASTQ files using 'zcat <file> | head -n 400 | wc -l'.
+
+### Next Action:
+- Install 'fastp' to perform adapter trimming and quality filtering before moving onto QIIME 2 / DADA2
+
