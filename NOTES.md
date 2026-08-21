@@ -91,3 +91,20 @@ using 'mv' and 'rm -r'
 ### Next Action:
 - Install 'fastp' to perform adapter trimming and quality filtering before moving onto QIIME 2 / DADA2
 
+## 2026-08-21
+
+### What I Worked On:
+- Created trimming pipeline script `scripts/trim.sh` using `fastp` for paired-end FASTQ processing.
+- Successfully trimmed adapter sequences and low-quality bases across all 10 eDNA raw sample pairs.
+- Verified post-trimming quality with MultiQC (`data/qc/multiqc_trimmed/`):
+- Read retention rate: >94-99% across samples.
+- Quality score distribution maintained in high-quality range (>30)
+
+### Challenges & Fixes:
+- Single-line `for` loop silent syntax failures, fixed by adding semicolons (`;`) before
+ `do`, inside the block, and before `done` when compressing multi-line syntax.
+- Wrapping issues in Ubuntu causing broken variable strings, moved code out of terminal and saved it into shell script using `nano` 
+
+### Next Action:
+- Import trimmed FASTQ reads into DADA2 / QIIME 2 for primer removal and
+ ASV inference.
