@@ -1,3 +1,6 @@
 data/raw/
 data/qc/
 data/
+*.qza
+*.qzv
+manifest.tsv
