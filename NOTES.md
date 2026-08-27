@@ -143,3 +143,30 @@ to allow 2–3 mismatches, restoring input counts back to 20,000–35,000+ reads
 
 ### Next Action: 
 - Assign taxonomy 
+
+## 08/26/26
+### What I Worked On:
+- Downloaded and imported the pr2 v5.0.0 database using q2-rescript to generate reference sequence and 
+taxonomy artifacts
+- Identified hardware limitations with Naive Bayes sklearn in the WSL enviornment and transitioned to
+sequence alignment via classify-consensus-vsearch
+- Converted taxonomy outputs into visualizer (taxonomy.qzv) and verified results on view.qiime2.org 
+- Taxonomically classified all 9 ASVs against pr2 with high alignment confidence (Scores ranging from
+ .571-1.0)
+- Confirmed presence of classic estaurine microeukaryote taxa in Chesapeake Bay samples,
+including planktonic algae, micro-parasites, and microscopic animals.
+
+### Commands learned/Used
+- qiime rescript get-pr2-data: Key flags `--p-version 5.0.0`, `--o-pr2-sequnces`, `--o-pr2-taxonomy`
+rescript automatically pulls raw sequence data from pr2, cleans up headers, verifies taxonomy
+lineages down to 9 levels, and bundels them into qiime2 .qza artifacts
+- qiime feature-classifier classify-consensus-vsearch: Key flags: `--i-query`,`--i-reference-reads`,
+`--i-reference-taxonomy`. Assigns taxonomic labels to query sequences in QIIME 2 by performing 
+global sequence alignment using VSEARCH against a reference database. 
+
+### Challanges and fixes
+-`Process exited with code 1`/OOM crash. `fit-classifier-naive-bayes` exhausted WSL host memory.
+Fixed by switching to pairwise alignment with vsearch, which runs under 1 GB RAM. 
+
+### Next Actions
+- Make relative abundance barplots
