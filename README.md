@@ -1,10 +1,11 @@
 # Chesapeake Bay eDNA Project
 
 Goal: 
-Detect changes in invasive marine invertebrate presence using public eDNA datasets.
+Profile microeukaryote community composition and diversity in Chesapeake Bay surface water eDNA samples
+using 18S v4 amplicon sequences, processed via QIIME2 and the PR2 database. 
 
-Target Organisms:
-- Tunicates 
-- Mussels/clams
-- Crabs
-- Barnacles 
+Target Taxonomic groups:
+- Planktonic Algae
+- Microbial Parasites & Pathogens
+- Heterotrophic Flagellates
+- Microscopic Metazoans
