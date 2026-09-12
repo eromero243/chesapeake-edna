@@ -170,3 +170,15 @@ Fixed by switching to pairwise alignment with vsearch, which runs under 1 GB RAM
 
 ### Next Actions
 - Make relative abundance barplots
+
+## 09/11/26
+### What I worked on
+- Successfully generated `data/qiime2/taxa-bar-plots.qzv` and inspected taxa via view.qiime2.org.
+- Found a high abundance of micro-crustaceans (Crustacea) across Chesapeake Bay samples
+
+### Challenges and fixes
+- Found only bacterial reads in a single sample: **Fix**: Filtered out bacterial reads using QIIME2
+and made new `table-eukaryota-only.qza`
+
+### Next Action: 
+- Organize data, figures, ect.
